@@ -1,3 +1,22 @@
 # run exe with local libc
 ln -s libc-2.23.so libc.so.6
-./ld-2.23.so --library-path . ./homew
+./ld-2.23.so --library-path . ./homework
+
+# execute exploit locally and debug
+python3 exploit.py LOCAL LOCAL_LIBC GDB
+tmux
+
+# check heap for strings (use heap start and end to define search range)
+find 0x603000, 0x624000, "song0"
+
+# check heap
+x/8gx 0x6020c0
+
+# tmux scroll
+strg + b -> [ -> now scalling possible -> q (quit) 
+
+#--------------------------------
+
+change ->   0x000055557f465200 -> 0x55557f465170
+            0x0000555578ef0200 -> 0x555578ef0170
+            0x000055556079d1d0 -> 0x55556079d140
