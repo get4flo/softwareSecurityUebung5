@@ -13,7 +13,10 @@ find 0x603000, 0x624000, "song0"
 x/8gx 0x6020c0
 
 # tmux scroll
-strg + b -> [ -> now scalling possible -> q (quit) 
+strg + b -> [ -> now scalling possible -> q (quit)
+
+# gbd check symbol address
+info address __malloc_hook
 
 #--------------------------------
 
